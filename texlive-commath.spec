@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/commath
+# catalog-date 2007-03-05 14:17:42 +0100
+# catalog-license lppl
+# catalog-version 0.3
 Name:		texlive-commath
 Version:	0.3
 Release:	1
@@ -41,6 +47,7 @@ reference commands.
 %doc %{_texmfdistdir}/doc/latex/commath/README
 %doc %{_texmfdistdir}/doc/latex/commath/commath.pdf
 %doc %{_texmfdistdir}/doc/latex/commath/commath.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -51,3 +58,5 @@ reference commands.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
