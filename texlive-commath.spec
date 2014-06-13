@@ -6,7 +6,7 @@
 # catalog-version 0.3
 Name:		texlive-commath
 Version:	0.3
-Release:	6
+Release:	7
 Summary:	Mathematics typesetting support
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/commath
