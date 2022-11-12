@@ -1,18 +1,12 @@
-# revision 15878
-# category Package
-# catalog-ctan /macros/latex/contrib/commath
-# catalog-date 2007-03-05 14:17:42 +0100
-# catalog-license lppl
-# catalog-version 0.3
 Name:		texlive-commath
-Version:	0.3
-Release:	11
+Version:	15878
+Release:	1
 Summary:	Mathematics typesetting support
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/commath
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/commath.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/commath.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/commath.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/commath.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ with both domain and range, and function operation) and various
 reference commands.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -41,24 +35,10 @@ reference commands.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.3-2
-+ Revision: 750409
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.3-1
-+ Revision: 718108
-- texlive-commath
-- texlive-commath
-- texlive-commath
-- texlive-commath
-
